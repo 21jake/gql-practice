@@ -14,9 +14,16 @@ export class UserController {
 
     @Post('/')
     async create() {
-        const user = new User();
-        user.firstName = 'test';
-        user.lastName = 'test';
-        return await this.userService.create(user);
+        // const user = new User();
+        // user.firstName = 'test';
+        // user.lastName = 'test';
+        // return await this.userService.create(user);
     }
+
+    @Get('/seed')
+    async seed() {
+        await this.userService.seed();
+        // return await this.userService.create(user);
+    }
+
 }
