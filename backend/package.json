@@ -24,10 +24,12 @@
     "migrate:generate": "typeorm-ts-node-commonjs migration:generate -d ./src/configs/typeorm.config.ts"
   },
   "dependencies": {
+    "@graphile-contrib/pg-simplify-inflector": "^6.1.0",
     "@nestjs/common": "^9.0.0",
     "@nestjs/core": "^9.0.0",
     "@nestjs/platform-express": "^9.0.0",
     "pg": "^8.9.0",
+    "postgraphile": "^4.13.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.2.0"
   },
