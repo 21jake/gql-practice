@@ -19,28 +19,18 @@ services:
     restart: always
     ports:
       - 8080:8080
-  # # backend:
-  #   image: boilerplate/backend
-  #   platform: linux/amd64
-  #   restart: unless-stopped
-  #   build: 
-  #     context: .
-  #     dockerfile: ./backend/Dockerfile
-  #   env_file:
-  #     - ./backend/.env
-  #   environment:
-  #     - DATABASE_NAME=test-prod
-  #     - DATABASE_HOST=database
-  #     - DATABASE_PORT=3306
-  #   depends_on:
-  #     - database
-  #   ports:
-  #     - 5000:5000
-
-  # frontend:
-  #   image: boilerplate/frontend
-  #   build:
-  #     context: .
-  #     dockerfile: ./frontend/Dockerfile
-  #   ports:
-  #     - "3000:80"
+  backend:
+    image: boilerplate/backend
+    platform: linux/amd64
+    restart: unless-stopped
+    build: 
+      context: .
+      dockerfile: ./backend/Dockerfile
+    env_file:
+      - ./backend/.env
+    environment:
+      - DATABASE_HOST=database
+    depends_on:
+      - database
+    ports:
+      - 5000:5000
